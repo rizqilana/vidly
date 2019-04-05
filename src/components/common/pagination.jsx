@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import propTypes from 'prop-types';
 import _ from 'lodash';
+import { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } from 'constants';
 
 const Pagination = props => {
   const { itemsCount, pageSize, currentPage, onPageChange } = props;
@@ -23,6 +25,13 @@ const Pagination = props => {
       </ul>
     </nav>
   );
+};
+
+Pagination.propTypes = {
+  itemsCount: propTypes.number.isRequired,
+  pageSize: propTypes.number.isRequired,
+  currentPage: propTypes.number.isRequired,
+  onPageChange: propTypes.number.isRequired
 };
 
 export default Pagination;
